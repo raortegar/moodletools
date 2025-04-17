@@ -1,0 +1,53 @@
+diff --git a/templates/report.mustache b/templates/report.mustache
+index 2091fcb..4d1430c 100755
+--- a/templates/report.mustache
++++ b/templates/report.mustache
+@@ -40,9 +40,8 @@
+ 
+ <div id="main" >
+     <h2>{{quizname}}</h2>
+-    <br/>
+-    <div class="mb-3">
+-    <a href="{{backbutton}}" type="button" class="btn btn-primary">{{#str}}back,quizaccess_proctoring{{/str}}</a>
++    <div class="box generalbox adminerror alert alert-info p-y-1">
++        {{proctoringsummary}}
+     </div>
+     <div id ="proctoring-form-left" >
+         <form action="{{url}}">
+@@ -76,17 +75,9 @@
+         <a class="btn btn-primary" href="{{settingspageurl}}">{{#str}}proctoring_summary_report,quizaccess_proctoring{{/str}}</a>
+         {{/settingsbtn}}
+     </div>
+-
+-    <div class="box generalbox adminerror alert alert-info p-y-1">
+-        {{proctoringsummary}}
+-    </div>
+-
+     <br/>
+-    
+ </div>
+ 
+-{{#checkrow}}
+-
+ <table class="table">
+ <thead>
+         <tr>
+@@ -133,10 +124,13 @@
+ 
+ </table>
+ 
+-{{/checkrow}}
+-
+ {{^checkrow}}
+ <div class="alert alert-info text-center" role="alert">
+    {{#str}}examdata,quizaccess_proctoring{{/str}}
+ </div>
+-{{/checkrow}}
+\ No newline at end of file
++{{/checkrow}}
++
++<br/>
++<div class="mb-3">
++<a href="{{backbutton}}" type="button" class="btn btn-primary">{{#str}}back,quizaccess_proctoring{{/str}}</a>
++</div>
+\ No newline at end of file
